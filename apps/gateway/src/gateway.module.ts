@@ -1,7 +1,7 @@
 import { Inject, Module } from "@nestjs/common";
 import { CouchBaseModule } from "nestjs-couchbase";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { Role } from "../../schemas/role";
+import { Role, RoleSecond } from "../../schemas/role";
 import { GatewayController } from "./gateway.controller";
 import { GatewayService } from "./gateway.service";
 
@@ -18,7 +18,7 @@ import { GatewayService } from "./gateway.service";
       }),
       inject: [ConfigService],
     }),
-    CouchBaseModule.forFeature([Role]),
+    CouchBaseModule.forFeature([Role, RoleSecond]),
   ],
   controllers: [GatewayController],
   providers: [GatewayService],
