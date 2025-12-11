@@ -23,4 +23,10 @@ import { GatewayService } from "./gateway.service";
   controllers: [GatewayController],
   providers: [GatewayService],
 })
-export class GatewayModule {}
+export class GatewayModule {
+  constructor(
+    @Inject(GatewayService) private readonly gatewayService: GatewayService
+  ) {
+    this.gatewayService.getHello();
+  }
+}
