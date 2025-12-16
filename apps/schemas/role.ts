@@ -2,6 +2,7 @@ import { Prop, Schema } from "nestjs-couchbase";
 
 @Schema({
   collection: "role",
+  scope: "_default",
   timestamps: {
     createdAt: "created_at",
     updatedAt: "updated_at",
